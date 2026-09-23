@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portable media identity and resolution infrastructure for post-production tools.">
+    <title>PostProject — media identity that travels</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav aria-label="Primary">
+        <a class="wordmark" href="/">PostProject</a>
+        <div>
+          <a href="https://docs.postproject.org/">Documentation</a>
+          <a href="https://github.com/eseifert/postproject">Source</a>
+        </div>
+      </nav>
+      <main>
+        <p class="eyebrow">Application-neutral media infrastructure</p>
+        <h1>Media identity that travels with the production.</h1>
+        <p class="intro">
+          Keep assets, compound representations, locations, metadata, and
+          provenance coherent across tools and machines—without making Rust or
+          a database part of your application interface.
+        </p>
+        <div class="actions">
+          <a class="primary" href="https://docs.postproject.org/0.3.0-alpha.1/">Read the 0.3 preview docs</a>
+          <a href="https://github.com/eseifert/postproject/releases">Download a native package</a>
+        </div>
+      </main>
+    </header>
+
+    <section class="proof" aria-label="Project capabilities">
+      <article>
+        <p class="number">01</p>
+        <h2>Portable by design</h2>
+        <p>Named storage roots map per machine. Production knowledge stays in the project; mount details do not.</p>
+      </article>
+      <article>
+        <p class="number">02</p>
+        <h2>Conservative resolution</h2>
+        <p>Evidence is explicit, verification is opt-in, and ambiguous candidates remain a caller decision.</p>
+      </article>
+      <article>
+        <p class="number">03</p>
+        <h2>Built to integrate</h2>
+        <p>A stable C ABI, C++17 wrapper, Python binding, CLI, OpenAssetIO Manager, and OTIO demonstration.</p>
+      </article>
+    </section>
+
+    <section class="integration">
+      <div>
+        <p class="eyebrow">Standards-composed workflow</p>
+        <h2>OTIO → OpenAssetIO → PostProject</h2>
+      </div>
+      <p>
+        An ordinary OTIO media reference carries a durable PostProject entity
+        URL. The upstream OpenAssetIO linker asks the PostProject Manager for
+        locatable content, and PostProject resolves the representation against
+        the production and this machine's roots.
+      </p>
+      <a href="https://github.com/eseifert/postproject-otio-demo">Run the demonstration →</a>
+    </section>
+
+    <footer>
+      <span>PostProject 0.3 integration preview</span>
+      <a href="https://github.com/eseifert/postproject/blob/main/LICENSE-MIT">MIT</a>
+      <a href="https://github.com/eseifert/postproject/blob/main/LICENSE-APACHE">Apache-2.0</a>
+    </footer>
+  </body>
+</html>
+
