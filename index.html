@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portable media identity and resolution infrastructure for post-production tools.">
-    <title>PostProject — media identity that travels</title>
+    <meta name="description" content="PostProject gives video and film software one shared database of your media, so programs can work together on a project and keep track of files wherever they move.">
+    <title>PostProject — one shared memory for your video software</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -17,16 +17,20 @@
         </div>
       </nav>
       <main>
-        <p class="eyebrow">Application-neutral media infrastructure</p>
-        <h1>Media identity that travels with the production.</h1>
+        <p class="eyebrow">Open-source media sharing for film and video software</p>
+        <h1>All your video software, working from the same page.</h1>
         <p class="intro">
-          Keep assets, compound representations, locations, metadata, and
-          provenance coherent across tools and machines—without making Rust or
-          a database part of your application interface.
+          Today, a film passes through several programs: one for editing, one
+          for effects, one for sound. Each keeps its own list of your clips, and
+          every hand-off means exporting, re-importing and fixing “media offline”
+          warnings. PostProject is a free building block that lets these programs
+          share one database of your media instead. Each program keeps its own
+          project files, but what one of them learns about a clip, the others
+          know too.
         </p>
         <div class="actions">
           <a class="primary" href="https://docs.postproject.org/">Read the 0.3 preview docs</a>
-          <a href="https://github.com/eseifert/postproject/releases">Download a native package</a>
+          <a href="https://github.com/eseifert/postproject/releases">Download the developer package</a>
         </div>
       </main>
     </header>
@@ -34,31 +38,36 @@
     <section class="proof" aria-label="Project capabilities">
       <article>
         <p class="number">01</p>
-        <h2>Portable by design</h2>
-        <p>Named storage roots map per machine. Production knowledge stays in the project; mount details do not.</p>
+        <h2>One database, every program</h2>
+        <p>Your editing, effects and sound programs can all open the same PostProject database at the same time. As soon as the editor imports a take, the effects program can see it; when the effects program renders a shot, the editor can pick it up. There is nothing to export, re-import or keep in sync by hand.</p>
       </article>
       <article>
         <p class="number">02</p>
-        <h2>Conservative resolution</h2>
-        <p>Evidence is explicit, verification is opt-in, and ambiguous candidates remain a caller decision.</p>
+        <h2>Works on any computer</h2>
+        <p>A project remembers “camera footage” instead of a fixed location like “D:\Footage”, so it opens on your laptop and in the studio alike. A fingerprint of each file lets PostProject recognize moved clips. If two files match equally well, it lets you choose instead of guessing.</p>
       </article>
       <article>
         <p class="number">03</p>
-        <h2>Built to integrate</h2>
-        <p>A stable C ABI, C++17 wrapper, Python binding, CLI, OpenAssetIO Manager, and OTIO demonstration.</p>
+        <h2>One clip, many versions</h2>
+        <p>The original camera file, a smaller copy for smooth editing, and the finished color-graded result all count as one clip that every program recognizes. PostProject also records which program made each result and from what, so anyone can trace a finished shot back to its source.</p>
       </article>
     </section>
 
     <section class="integration">
       <div>
-        <p class="eyebrow">Standards-composed workflow</p>
-        <h2>OTIO → OpenAssetIO → PostProject</h2>
+        <p class="eyebrow">For software developers</p>
+        <h2>Hand an edit to another program and it still finds every clip.</h2>
       </div>
       <p>
-        An ordinary OTIO media reference carries a durable PostProject entity
-        URL. The upstream OpenAssetIO linker asks the PostProject Manager for
-        locatable content, and PostProject resolves the representation against
-        the production and this machine's roots.
+        A production is a single database file that several programs can use
+        together. Every change is recorded, so each program can ask what the
+        others have changed since it last looked. PostProject also works with
+        open industry standards: an edit saved as OpenTimelineIO, a common
+        format for exchanging timelines, can refer to clips by their PostProject
+        ID, and the receiving program uses OpenAssetIO to ask PostProject where
+        each clip is on this computer. Developers can use PostProject from C,
+        C++, Python or the command line. Everything stays on your computers;
+        nothing is uploaded.
       </p>
       <a href="https://github.com/eseifert/postproject-otio-demo">Run the demonstration →</a>
     </section>
